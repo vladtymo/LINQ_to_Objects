@@ -96,6 +96,7 @@ namespace _01_Intro_to_LINQ
     {
         static void Main(string[] args)
         {
+            // -=-=-=-=-=-=-=-=- Синтаксис запиту -=-=-=-=-=-=-=-=-
             // результат = from item_name in source_name
             //             select result_value;
 
@@ -122,6 +123,7 @@ namespace _01_Intro_to_LINQ
             //}
             //WriteLine();
 
+            // -=-=-=-=-=-=-=-=- Синтаксис методу -=-=-=-=-=-=-=-=-
             // Метод розширення
             //var result = arrayInt.Select(ConvertData);
             //var result = arrayInt.Select(delegate (int item) { return item * -1; });
