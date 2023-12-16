@@ -14,7 +14,7 @@ namespace _12_students
         // ...
         public override string ToString()
         {
-            return $"Surname: {LastName}, Name: {FirstName}, Born: { BirthDate.ToLongDateString()}";
+            return $"Surname: {LastName}, Name: {FirstName}, Born: {BirthDate.ToLongDateString()}";
         }
     }
     class Program
@@ -27,27 +27,27 @@ namespace _12_students
             List<Student> students = new List<Student>
             {
                  new Student {
-                 FirstName = "John",
-                 LastName = "Miller",
-                 BirthDate = new DateTime(2001,3,12)
-                 },
-                        new Student {
-                 FirstName = "Candice",
-                 LastName = "Leman",
-                 BirthDate = new DateTime(1998,7,22)
+                     FirstName = "John",
+                     LastName = "Miller",
+                     BirthDate = new DateTime(2001,3,12)
                  },
                  new Student {
-                 FirstName = "Joey",
-                 LastName = "Finch",
-                 BirthDate = new DateTime(2007,1,30)
+                     FirstName = "Candice",
+                     LastName = "Leman",
+                     BirthDate = new DateTime(1998,7,22)
                  },
                  new Student {
-                 FirstName = "Nicole",
-                 LastName = "Taylor",
-                 BirthDate = new DateTime(1996,1,10)
+                     FirstName = "Joey",
+                     LastName = "Finch",
+                     BirthDate = new DateTime(2007,1,30)
+                 },
+                 new Student {
+                     FirstName = "Nicole",
+                     LastName = "Taylor",
+                     BirthDate = new DateTime(1996,1,10)
                  }
             };
-            Console.WriteLine($"\tThe current date: { DateTime.Now.ToLongDateString()}\n");
+            Console.WriteLine($"\tThe current date: {DateTime.Now.ToLongDateString()}\n");
 
             ////////////////Expressions in query
             //var query = from s in students
@@ -80,8 +80,8 @@ namespace _12_students
 
             var student = from s in students
                           where s.BirthDate == maxDate
-                              //(from b in students
-                              // select b.BirthDate).Max()
+                          //(from b in students
+                          // select b.BirthDate).Max()
                           select s;
 
             foreach (var item in student)

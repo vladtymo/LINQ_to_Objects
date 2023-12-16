@@ -37,7 +37,7 @@ namespace SimpleProject
             System.Console.WriteLine();
 
             // Метод розширення
-            IEnumerable<string> result = poem.SelectMany(p => p.Split(' ', ';', ',')).Where(i => i.Count() > 5);
+            IEnumerable<string> result = poem.SelectMany(p => p.Split(' ', ';', ',')).Where(i => i.Count() > 1);
             foreach (string item in result)
             {
                 WriteLine($"\t{item}");

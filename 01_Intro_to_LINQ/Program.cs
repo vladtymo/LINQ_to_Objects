@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using static System.Console;
 
@@ -100,34 +101,35 @@ namespace _01_Intro_to_LINQ
             // результат = from item_name in source_name
             //             select result_value;
 
-            int[] arrayInt = { 5, 34, 67, -12, 94, -42 };
+            int[] original = { 5, 34, 67, -12, 94, -42 };
 
-            IEnumerable<int> query = from i in arrayInt
-                                     select i * -1;     // відкладене завантаження
+            IEnumerable<int> query = from i in original
+                                     select i * -1;     // відкладене завантаження (lazy loading)
 
-            //List<int> q2 = query.ToList();            // негайне завантаження
+            // List<int> q2 = query.ToList();           // негайне завантаження
 
-            //arrayInt[1] = 100;
+            original[1] = 100;
 
             WriteLine("The array to change:");
-            foreach (int item in query)
+            foreach (int item in query)                 // виконання команди
             {
                 Write($"{item}\t");
             }
 
-            //arrayInt[0] = 25;
-            //WriteLine("\nThe array after the change:");
-            //foreach (int item in query)
-            //{
-            //    Write($"{item}\t");
-            //}
-            //WriteLine();
+            original[0] = 25;
+
+            WriteLine("\nThe array after the change:");
+            foreach (int item in query)                 // виконання команди
+            {
+                Write($"{item}\t");
+            }
+            WriteLine();
 
             // -=-=-=-=-=-=-=-=- Синтаксис методу -=-=-=-=-=-=-=-=-
             // Метод розширення
-            //var result = arrayInt.Select(ConvertData);
-            //var result = arrayInt.Select(delegate (int item) { return item * -1; });
-            var result = arrayInt.Select(item => item * -1);
+            //var result = original.Select(ConvertData);
+            //var result = original.Select(delegate (int item) { return item * -1; });
+            var result = original.Select(item => item * -1);
 
             WriteLine("\nLINQ method:");
             foreach (var item in result)
@@ -138,9 +140,9 @@ namespace _01_Intro_to_LINQ
             System.Console.WriteLine();
         }
 
-        //static int ConvertData(int item)
-        //{
-        //    return item * -1;
-        //}
+        static int ConvertData(int item)
+        {
+            return item * -1;
+        }
     }
 }

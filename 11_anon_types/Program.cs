@@ -35,6 +35,12 @@ namespace _11_anon_types
                      new Student { FirstName = "Nicole", LastName = "Taylor", GroupId = 2 }
                 };
 
+            var result = students.Select(x => new
+            {
+                Name = x.FirstName,
+                Group = x.GroupId
+            });
+
             var query = from g in groups
                         join st in students on g.Id
                         equals st.GroupId
@@ -46,11 +52,11 @@ namespace _11_anon_types
                         };
 
             var query2 = students.Select(s => new
-                                                {
-                                                    Name = s.FirstName,
-                                                    Surname = s.LastName,
-                                                    In = $"{s.FirstName[0]}.{s.LastName[0]}"
-                                                });
+            {
+                Name = s.FirstName,
+                Surname = s.LastName,
+                In = $"{s.FirstName[0]}.{s.LastName[0]}"
+            });
 
             Console.WriteLine("\tStudents in groups:");
 

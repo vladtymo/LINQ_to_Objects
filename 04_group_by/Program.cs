@@ -42,8 +42,8 @@ namespace _04_group_by
             // Product Collection
             Product[] arr = {
                 new Product() { Name = "Apple", Category = "Food"},
-                new Product() { Name = "Phone", Category = "Tech"},
-                new Product() { Name = "Laptop", Category = "Tech"},
+                new Product() { Name = "Phone", Category = "Electronics"},
+                new Product() { Name = "Laptop", Category = "Electronics"},
                 new Product() { Name = "banana", Category = "Food"},
                 new Product() { Name = "Pelmen", Category = "Food"},
             };
@@ -57,7 +57,7 @@ namespace _04_group_by
 
                 foreach (Product item in group)
                 {
-                    Write($"\t{item}");
+                    Write($"\t{item.Name} ");
                 }
                 WriteLine();
             }
