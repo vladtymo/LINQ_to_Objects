@@ -60,6 +60,8 @@ namespace _08_agregations
 
             double avr1 = numbers.Average();
             double avr2 = users.Average(u => u.Age); //средний возраст
+
+            Console.WriteLine($"Numbers: {sum1}, {min1}...{max1}");
         }
     }
 }

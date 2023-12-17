@@ -35,7 +35,7 @@ namespace _02_Where
             WriteLine();
 
             // Фільтрація слів по кількості символів
-            string[] words = { "hello", "free", "gorilla", "blue", "red", "bob", "great" };
+            string[] words = { "hello", "free", "gorilla", "blue", "red", "vlad", "great" };
 
             //var result = from word in words
             //             where word.Length == 4

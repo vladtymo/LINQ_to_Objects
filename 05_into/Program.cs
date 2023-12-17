@@ -8,7 +8,7 @@ namespace _05_into
     {
         static void Main(string[] args)
         {
-            int[] arrayInt = { 5, 34, 67, 12, 94, 42 };
+            int[] arrayInt = { 5, 34, 67, 12, 94, 44, 42 };
 
             IEnumerable<IGrouping<int, int>> query =
                                                     from i in arrayInt

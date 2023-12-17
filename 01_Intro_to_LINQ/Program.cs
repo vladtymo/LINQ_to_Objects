@@ -106,19 +106,11 @@ namespace _01_Intro_to_LINQ
             IEnumerable<int> query = from i in original
                                      select i * -1;     // відкладене завантаження (lazy loading)
 
-            // List<int> q2 = query.ToList();           // негайне завантаження
+            //List<int> q2 = query.ToList();           // негайне завантаження
 
             original[1] = 100;
 
             WriteLine("The array to change:");
-            foreach (int item in query)                 // виконання команди
-            {
-                Write($"{item}\t");
-            }
-
-            original[0] = 25;
-
-            WriteLine("\nThe array after the change:");
             foreach (int item in query)                 // виконання команди
             {
                 Write($"{item}\t");
